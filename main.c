@@ -17,16 +17,17 @@
 **	and collect a list of rooms. Each room has it's own list of
 **	links. Each link has one room (from the roomlist).
 **
-**	2.on larger maps, use 5 search options to search ways, choose the
+** 	2.create given amount of t_ant ants.
+**
+**	3.on larger maps, use 5 search options to search ways, choose the
 **	best result. With smaller, just one. Give values to rooms so that
 **	endrooms links are 1, their links 2 and so on. Also give a cross value
 **	based on how many times the way from room to end will cross another
 **	way. Use these values in search for good ways, and save ways
 **	to waylists.
 **
-**	3.if found a way, print out valid map.
+**	4.if found a way, print out valid map.
 **
-** 	4.create given amount of t_ant ants.
 **
 **	5.sign one of the chosen ways to each ant.
 **
