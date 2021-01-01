@@ -45,11 +45,11 @@ int		read_map(t_lem *lem)
 			lem->firstline = newline;
 	}
 	if (lem->maplinelist == NULL)
-		return (error_m());
+		return (error_m(1, lem));
 	lem->maplinelist->prev = NULL;
 	if (lem->start != 1 || lem->end != 1)
-		return (error_m());
+		return (error_m(2, lem));
 	if (lem->startroom->linklist == NULL || lem->endroom->linklist == NULL)
-		return (error_m());
+		return (error_m(3, lem));
 	return (0);
 }

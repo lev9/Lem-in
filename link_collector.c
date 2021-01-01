@@ -82,7 +82,7 @@ int			create_link(char *str, t_lem *lem)
 	while (tmp2 && ft_strcmp(tmp2->name, info[1]) != 0)
 		tmp2 = tmp2->next;
 	if (tmp == NULL || tmp2 == NULL)
-		return (error_m());
+		return (error_m(13, lem));
 	newlink = new_link(tmp2);
 	add_to_rooms_links(&tmp->linklist, newlink);
 	newlink2 = new_link(tmp);

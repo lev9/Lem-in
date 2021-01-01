@@ -12,7 +12,7 @@
 
 #include "lem.h"
 
-int		add_to_roomlist(t_room **roomlist, t_room *room)
+int		add_to_roomlist(t_room **roomlist, t_room *room, t_lem *lem)
 {
 	t_room	*tmp;
 
@@ -23,12 +23,12 @@ int		add_to_roomlist(t_room **roomlist, t_room *room)
 		{
 			if (ft_strcmp(tmp->name, room->name) == 0 ||
 			(tmp->x == room->x && tmp->y == room->y))
-				return (error_m());
+				return (error_m(10, lem));
 			tmp = tmp->next;
 		}
 		if (ft_strcmp(tmp->name, room->name) == 0 ||
 		(tmp->x == room->x && tmp->y == room->y))
-			return (error_m());
+			return (error_m(10, lem));
 		tmp->next = room;
 	}
 	else
@@ -64,11 +64,11 @@ int		create_room(char *str, t_lem *lem)
 
 	info = ft_strsplit(str, ' ');
 	if (info[0] == NULL || info[1] == NULL || info[2] == NULL)
-		return (error_m());
+		return (error_m(11, lem));
 	if (ft_strrchr(info[0], '-'))
-		return (error_m());
+		return (error_m(11, lem));
 	newroom = room_new(info);
-	add_to_roomlist(&lem->roomlist, newroom);
+	add_to_roomlist(&lem->roomlist, newroom, lem);
 	if (lem->start == 0)
 	{
 		lem->start = 1;

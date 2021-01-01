@@ -31,9 +31,49 @@ int		set_default_values(t_lem *lem)
 	return (0);
 }
 
-int		error_m(void)
+int		error_m2(int why, t_lem *lem)
+{
+	if (why == 9)
+	{
+		if (lem->rooms == 0)
+			ft_putstr_fd("no rooms.\n", 2);
+		else
+			ft_putstr_fd("start or end missing.\n", 2);
+	}
+	else if (why == 10)
+		ft_putstr_fd("same room name or same coordinates twice.\n", 2);
+	else if (why == 11)
+		ft_putstr_fd("unvalid room name.\n", 2);
+	else if (why == 12)
+		ft_putstr_fd("no solution.\n", 2);
+	else if (why == 13)
+		ft_putstr_fd("one of linked rooms doesn't exist.\n", 2);
+	else
+		ft_putstr_fd("unvalid line.\n", 2);
+	exit(0);
+}
+
+int		error_m(int why, t_lem *lem)
 {
 	ft_putstr_fd("ERROR\n", 2);
+	if (why == 1)
+		ft_putstr_fd("empty ant farm.\n", 2);
+	else if (why == 2)
+		ft_putstr_fd("start room or end room missing.\n", 2);
+	else if (why == 3)
+		ft_putstr_fd("start room or end room is isolated.\n", 2);
+	else if (why == 4)
+		ft_putstr_fd("not a room line after ##start or ##end.\n", 2);
+	else if (why == 5)
+		ft_putstr_fd("##start appears multiple times.\n", 2);
+	else if (why == 6)
+		ft_putstr_fd("##end appears multiple times.\n", 2);
+	else if (why == 7)
+		ft_putstr_fd("does not begin with a valid ant number.\n", 2);
+	else if (why == 8)
+		ft_putstr_fd("room line in a link section.\n", 2);
+	else
+		error_m2(why, lem);
 	exit(0);
 }
 

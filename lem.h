@@ -117,7 +117,8 @@ int			main(void);
 */
 
 int			set_default_values(t_lem *lem);
-int			error_m(void);
+int			error_m2(int why, t_lem *lem);
+int			error_m(int why, t_lem *lem);
 int			final_error(t_lem *lem);
 
 /*
@@ -141,7 +142,7 @@ int			handle_line(char *str, t_lem *lem);
 **	room_creator.c
 */
 
-int			add_to_roomlist(t_room **roomlist, t_room *room);
+int			add_to_roomlist(t_room **roomlist, t_room *room, t_lem *lem);
 t_room		*room_new(char **info);
 int			create_room(char *str, t_lem *lem);
 

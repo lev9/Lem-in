@@ -139,7 +139,7 @@ int		main(void)
 		else
 			find_path(lem);
 		if (lem->ways == 0)
-			return (error_m());
+			return (error_m(12, lem));
 	}
 	print_map(lem->firstline);
 	ft_putchar_fd('\n', 1);

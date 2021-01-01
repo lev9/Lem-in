@@ -68,17 +68,17 @@ int		is_room_line(char *str)
 int		check_comments(char *str, t_lem *lem)
 {
 	if (lem->start == 0 || lem->end == 0)
-		return (error_m());
+		return (error_m(4, lem));
 	else if (ft_strcmp("##start", str) == 0)
 	{
 		if (lem->start == 1)
-			return (error_m());
+			return (error_m(5, lem));
 		lem->start = 0;
 	}
 	else if (ft_strcmp("##end", str) == 0)
 	{
 		if (lem->end == 1)
-			return (error_m());
+			return (error_m(6, lem));
 		lem->end = 0;
 	}
 	else if (ft_strncmp("#Here is the number of lines required:", str, 38) == 0)
@@ -97,10 +97,10 @@ int		check_ant_line(char *str, t_lem *lem)
 	while (str[i])
 	{
 		if (!(ft_isdigit(str[i])))
-			return (error_m());
+			return (error_m(7, lem));
 		i++;
 		if (i == 9 && str[0] >= 2)
-			return (error_m());
+			return (error_m(7, lem));
 	}
 	lem->ants = ft_atoi(&str[0]);
 	return (0);
@@ -115,13 +115,13 @@ int		handle_line(char *str, t_lem *lem)
 	else if (lem->start == 0 || lem->end == 0)
 	{
 		if (is_room_line(str) == 0)
-			return (error_m());
+			return (error_m(4, lem));
 		create_room(str, lem);
 	}
 	else if (is_room_line(str) == 1)
 	{
 		if (lem->link_part == 1)
-			return (error_m());
+			return (error_m(8, lem));
 		create_room(str, lem);
 	}
 	else if (is_link_line(str) == 1 && lem->end == 1 && lem->start == 1)
@@ -131,6 +131,6 @@ int		handle_line(char *str, t_lem *lem)
 		create_link(str, lem);
 	}
 	else
-		return (error_m());
+		return (error_m(9, lem));
 	return (0);
 }
