@@ -25,10 +25,6 @@ MLXFLAGS = -I$(LIBMLX) -L$(LIBMLX) -lmlx -framework OpenGL -framework Appkit
 
 LIBFTFLAGS = -L$(LIBFT) -lft
 
-REST =  -I /usr/local/include -L /usr/local/lib/ -lmlx -framework \
-	OpenGL -framework Appkit libft/libft.a
-
-
 FLAGS = -Wall -Wextra -Werror
 
 .PHONY: all clean fclean re
