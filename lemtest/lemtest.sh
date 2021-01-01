@@ -12,7 +12,7 @@ if (( $# < 2 )); then
 echo -e "${B}${Z2}
  USAGE: ${G} ****************************************\n
 ${NO_COLOR}Make sure you have the ${Z1} generator ${NO_COLOR}
-int this directory with this ${Z1} lemtest.sh ${NO_COLOR}.
+in this directory with this ${Z1} lemtest.sh ${NO_COLOR}.
 Place this directory in the same directory with
 your ${Z1} lem-in ${NO_COLOR}.\n
 ./lemtest.sh [generator option] [rounds]\n
@@ -108,4 +108,3 @@ fi
 rm mapfile
 rm resfile
 rm timefile
-#rm timefile
