@@ -28,7 +28,6 @@
 **
 **	4.if found a way, print out valid map.
 **
-**
 **	5.sign one of the chosen ways to each ant.
 **
 ** 	6.until all ants are in endroom, move ants forward on their
