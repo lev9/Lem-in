@@ -17,6 +17,7 @@ Place this directory in the same directory with
 your ${Z1} lem-in ${NO_COLOR}.\n
 ./lemtest.sh [generator option] [rounds]\n
 generator options:\n
+flow-one
 flow-ten
 flow-thousand
 big
