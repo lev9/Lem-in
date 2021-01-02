@@ -4,7 +4,7 @@
 
 - a bunch of ants finding their way through an ant farm defined in a specific ant farm data form. Ant farms rooms are linked to each other with tubes. Each room can have a limitless amount of rooms linked to it. In the beginning all ants are in start room. On each round, each ant can make one move to a free linked room. Goal is to get all ants into end room with as few rounds as possible.   
 
-- ant farm example:
+- ant farm example (displayed in the first picture):
 
 		4		<-- amount of ants
 		3 2 2		<-- room name, x-coord, y-coord
