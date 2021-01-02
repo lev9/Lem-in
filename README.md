@@ -36,7 +36,7 @@
 		L1-6 L2-2 L3-5 L4-4 
 		L1-end L2-end L3-6 L4-2 
 		L3-end L4-end		<-- in L3-end, 3 = ants name, end = the room it moves to.
-					one line = one round. 
+						one line = one round. 
 
 - usage (unvalid maps return ERROR; error specifications to be added):
 
