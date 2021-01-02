@@ -8,7 +8,7 @@
 
 		4		<-- amount of ants
 		3 2 2		<-- room name, x-coord, y-coord
-		##start		<-- indicates that next line will be the start room.
+		##start	<-- indicates that next line will be the start room.
 		start 4 0
 		##end		<-- indicates that next line will be the end room.
 		end 4 6
@@ -18,7 +18,7 @@
 		#comment lines can be anywhere and start with #.
 		5 8 2
 		6 8 4
-		start-1		<-- here start link lines. room "start" is linked to room "1".
+		start-1	<-- here start link lines. room "start" is linked to room "1".
 		3-4
 		2-4
 		##commands start with ##, this one is unknown and will be ignored.
