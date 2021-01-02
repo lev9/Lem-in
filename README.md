@@ -4,6 +4,30 @@
 
 - a bunch of ants finding their way through an ant farm defined in a specific ant farm data form. Ant farms rooms are linked to each other with tubes. Each room can have a limitless amount of rooms linked to it. In the beginning all ants are in start room. On each round, each ant can make one move to a free linked room. Goal is to get all ants into end room with as few rounds as possible.   
 
+- ant farm example:
+
+	4		<-- amount of ants
+	3 2 2		<-- room name, x-coord, y-coord
+	##start		<-- indicates that next line will be the start room.
+	start 4 0
+	##end		<-- indicates that next line will be the end room.
+	end 4 6
+	4 0 4
+	1 4 2
+	2 4 4
+	#comment lines can be anywhere and start with #.
+	5 8 2
+	6 8 4
+	start-1		<-- here start link lines. room "start" is linked to room "1".
+	3-4
+	2-4
+	##commands start with ##, this one is unknown and will be ignored.
+	1-5
+	6-5
+	end-6
+	1-2
+	2-end
+	3-start
 
 - usage (unvalid maps return ERROR; error specifications to be added):
 
