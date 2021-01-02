@@ -70,3 +70,4 @@
 - depending on the amount of ants and the ant farm structure, the shortest way isn't necessarily the fastest (upper picture). A small ant farm & a larger ant farm: 
 <img align="left" width="620" height="620" SRC="pics/lem_1.png">
 <img align="left" width="620" height="620" SRC="pics/lem_2.png">
+<img align="left" width="620" height="310" SRC="pics/lem_3.png">
