@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: laskolin <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: laskolin <laskolin@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 13:41:45 by laskolin          #+#    #+#              #
 #    Updated: 2019/11/11 15:16:03 by laskolin         ###   ########.fr        #
