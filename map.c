@@ -16,12 +16,41 @@ int		print_map(t_mapline *firstline)
 {
 	t_mapline	*line;
 
+	ft_putstr_fd("  ", 1);
+	ft_putstr_fd("\r", 1);
 	line = firstline;
 	while (line)
 	{
 		ft_putendl_fd(line->str, 1);
 		line = line->prev;
 	}
+	return (0);
+}
+
+int		handle_line(char *str, t_lem *lem)
+{
+	if (str[0] == '\0')
+		return (error_m(15, lem));
+	else if (ft_strncmp("#", str, 1) == 0)
+		check_comments(str, lem);
+	else if (!lem->ants)
+		check_ant_line(str, lem);
+	else if (lem->start == 0 || lem->end == 0)
+	{
+		if (is_room_line(str) == 0)
+			return (error_m(4, lem));
+		create_room(str, lem);
+	}
+	else if (is_room_line(str) == 1)
+	{
+		if (lem->link_part == 1)
+			return (error_m(8, lem));
+		create_room(str, lem);
+	}
+	else if (is_link_line(str) == 1)
+		check_if_time_for_link_line(str, lem);
+	else
+		return (error_m(9, lem));
 	return (0);
 }
 

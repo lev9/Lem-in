@@ -13,24 +13,25 @@
 #include "lem.h"
 
 /*
-**	1.while reading the map to maplinelist, check that it is valid
-**	and collect a list of rooms. Each room has it's own list of
-**	links. Each link has one room (from the roomlist).
+**	1.while reading the map to a maplinelist, check that it is valid
+**	and collect a list of rooms and for each linked room it's own list of
+**	links. Each link of a rooms linklist has one room (from the roomlist).
 **
 ** 	2.create given amount of t_ant ants.
 **
-**	3.on larger maps, use 5 search options to search ways, choose the
-**	best result. With smaller, just one. Give values to rooms so that
-**	endrooms links are 1, their links 2 and so on. Also give a cross value
-**	based on how many times the way from room to end will cross another
-**	way. Use these values in search for good ways, and save ways
-**	to waylists.
+**	3.on larger maps, use 5 search options to search ways and choose the
+**	best result. With smaller, use one option. Keep updating the values of
+**	the rooms so that endrooms links are 1, their links 2 and so on.
+**	Also give a cross value based on how many times the way from room to
+**	end will cross another way. Use these values in search for good
+**	way combinations, and save those to waylists.
 **
 **	4.if found a way, print out valid map.
 **
-**	5.sign one of the chosen ways to each ant.
+**	5.sign one of the ways of the waylist to each ant so that each way will
+**	be in use for as similar time as possible.
 **
-** 	6.until all ants are in endroom, move ants forward on their
+** 	6.until all ants are in the end room, move ants forward on their
 **	signed ways & print moves.
 */
 

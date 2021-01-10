@@ -126,17 +126,18 @@ int			final_error(t_lem *lem);
 */
 
 int			print_map(t_mapline *firstline);
+int			handle_line(char *str, t_lem *lem);
 int			read_map(t_lem *lem);
 
 /*
-**	map_reader.c
+**	line_handler.c
 */
 
 int			is_link_line(char *str);
 int			is_room_line(char *str);
 int			check_comments(char *str, t_lem *lem);
 int			check_ant_line(char *str, t_lem *lem);
-int			handle_line(char *str, t_lem *lem);
+int			check_if_time_for_link_line(char *str, t_lem *lem);
 
 /*
 **	room_creator.c

@@ -12,7 +12,7 @@
 
 #include "lem.h"
 
-int		is_link_line(char *str)
+int	is_link_line(char *str)
 {
 	int		i;
 
@@ -39,7 +39,7 @@ int		is_link_line(char *str)
 	return (1);
 }
 
-int		is_room_line(char *str)
+int	is_room_line(char *str)
 {
 	int	i;
 
@@ -65,7 +65,7 @@ int		is_room_line(char *str)
 	return (1);
 }
 
-int		check_comments(char *str, t_lem *lem)
+int	check_comments(char *str, t_lem *lem)
 {
 	if (lem->start == 0 || lem->end == 0)
 		return (error_m(4, lem));
@@ -89,7 +89,7 @@ int		check_comments(char *str, t_lem *lem)
 	return (0);
 }
 
-int		check_ant_line(char *str, t_lem *lem)
+int	check_ant_line(char *str, t_lem *lem)
 {
 	int		i;
 
@@ -106,31 +106,15 @@ int		check_ant_line(char *str, t_lem *lem)
 	return (0);
 }
 
-int		handle_line(char *str, t_lem *lem)
+int	check_if_time_for_link_line(char *str, t_lem *lem)
 {
-	if (ft_strncmp("#", str, 1) == 0)
-		check_comments(str, lem);
-	else if (!lem->ants)
-		check_ant_line(str, lem);
-	else if (lem->start == 0 || lem->end == 0)
-	{
-		if (is_room_line(str) == 0)
-			return (error_m(4, lem));
-		create_room(str, lem);
-	}
-	else if (is_room_line(str) == 1)
-	{
-		if (lem->link_part == 1)
-			return (error_m(8, lem));
-		create_room(str, lem);
-	}
-	else if (is_link_line(str) == 1 && lem->end == 1 && lem->start == 1)
+	if (lem->end == 1 && lem->start == 1)
 	{
 		lem->room_part = 0;
 		lem->link_part = 1;
 		create_link(str, lem);
 	}
 	else
-		return (error_m(9, lem));
+		return (error_m(14, lem));
 	return (0);
 }

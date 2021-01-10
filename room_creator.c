@@ -21,13 +21,11 @@ int		add_to_roomlist(t_room **roomlist, t_room *room, t_lem *lem)
 		tmp = *roomlist;
 		while (tmp->next != NULL)
 		{
-			if (ft_strcmp(tmp->name, room->name) == 0 ||
-			(tmp->x == room->x && tmp->y == room->y))
+			if (ft_strcmp(tmp->name, room->name) == 0)
 				return (error_m(10, lem));
 			tmp = tmp->next;
 		}
-		if (ft_strcmp(tmp->name, room->name) == 0 ||
-		(tmp->x == room->x && tmp->y == room->y))
+		if (ft_strcmp(tmp->name, room->name) == 0)
 			return (error_m(10, lem));
 		tmp->next = room;
 	}
