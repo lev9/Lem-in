@@ -27,18 +27,20 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 lem-in: $(OBJ)
-	make -C libft
-	clang  $(FLAGS) -g -o $(NAME) $(OBJ) -L libft/ -lft
+	@make -C libft
+	@clang  $(FLAGS) -g -o $(NAME) $(OBJ) -L libft/ -lft
+	@printf "Done compiling lem-in.\nRun:\n\x1b[31m./lem-in < [antfarm]\n"
 
 $(OBJ): %.o: %.c lem.h
-	clang $(FLAGS) -c $<
+	@clang $(FLAGS) -c $<
+	@printf "\r                                  \r$<"
 
 clean:
-	/bin/rm -f $(OBJ)
-	make clean -C libft/
+	@/bin/rm -f $(OBJ)
+	@make clean -C libft/
 
 fclean: clean
-	make fclean -C libft/
-	/bin/rm -f lem-in
+	@make fclean -C libft/
+	@/bin/rm -f lem-in
 
 re: fclean all

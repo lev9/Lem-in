@@ -41,11 +41,13 @@ HEADER = libft.h
 all: $(NAME)
 
 $(NAME):$(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib libft.a
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib libft.a
+	@printf "\rDone compiling libft.\n"
 
 $(OBJECTS): %.o: %.c $(HEADER)
-	gcc -Wall -Wextra -Werror -c $<
+	@gcc -Wall -Wextra -Werror -c $<
+	@printf "\r                                                        \r$<"
 
 clean:
 	@/bin/rm -f $(OBJECTS)
