@@ -36,7 +36,7 @@ OBJECTS = ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr
 	ft_putendl_fd.o ft_putnbr_fd.o ft_putnbr_fd_col.o ft_lstadd.o ft_lstdel.o \
 	ft_lstdelone.o ft_lstiter.o ft_lstnew.o ft_lstmap.o get_next_line.o
 
-HEADERS = libft.h
+HEADER = libft.h
 
 all: $(NAME)
 
