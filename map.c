@@ -54,6 +54,18 @@ int		handle_line(char *str, t_lem *lem)
 	return (0);
 }
 
+int		final_validation(t_lem *lem)
+{
+	if (lem->maplinelist == NULL)
+		return (error_m(1, lem));
+	lem->maplinelist->prev = NULL;
+	if (lem->start != 1 || lem->end != 1)
+		return (error_m(2, lem));
+	if (lem->startroom->linklist == NULL || lem->endroom->linklist == NULL)
+		return (error_m(3, lem));
+	return (0);
+}
+
 int		read_map(t_lem *lem)
 {
 	char		*str;
@@ -62,6 +74,8 @@ int		read_map(t_lem *lem)
 
 	while (get_next_line(0, &str))
 	{
+		if (str == NULL)
+			return (error_m(16, lem));
 		handle_line(str, lem);
 		newline = (t_mapline*)malloc(sizeof(t_mapline));
 		newline->str = str;
@@ -73,12 +87,6 @@ int		read_map(t_lem *lem)
 		if (newline->next == NULL)
 			lem->firstline = newline;
 	}
-	if (lem->maplinelist == NULL)
-		return (error_m(1, lem));
-	lem->maplinelist->prev = NULL;
-	if (lem->start != 1 || lem->end != 1)
-		return (error_m(2, lem));
-	if (lem->startroom->linklist == NULL || lem->endroom->linklist == NULL)
-		return (error_m(3, lem));
+	final_validation(lem);
 	return (0);
 }

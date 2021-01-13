@@ -127,6 +127,7 @@ int			final_error(t_lem *lem);
 
 int			print_map(t_mapline *firstline);
 int			handle_line(char *str, t_lem *lem);
+int			final_validation(t_lem *lem);
 int			read_map(t_lem *lem);
 
 /*
