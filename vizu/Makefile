@@ -21,7 +21,7 @@ SRC = visu.c help.c read.c room.c link.c key1.c key2.c ant.c move.c window.c \
 
 OBJ = $(subst .c,.o,$(SRC))
 
-MLXFLAGS = -I$(LIBMLX) -L$(LIBMLX) -lmlx -framework OpenGL -framework Appkit
+MLXFLAGS = -L$(LIBMLX) -lmlx -framework OpenGL -framework Appkit
 
 LIBFTFLAGS = -L$(LIBFT) -lft
 
